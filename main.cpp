@@ -2,22 +2,30 @@
 using namespace std;
 
 int MCD(int n1, int n2) {
-
-    while (n2 > 0) {
-        int m = n1 % n2;
+    int r;
+    
+    do {
+        
+        r= n1 % n2; 
         n1 = n2;
-        n2 = m;
-
-    }
-
-    return n1;
+        n2 = r;
+        
+    }while(r != 0);
+     
+    return r;
 }
 
 int mcm(int n1, int n2) {
 
-    int m = (n1 * n2) / MCD(n1, n2);
-
-    return m;
+    int mn1 = n1;
+    int mn2 = n2;
+    
+    while (mn1 != mn2) {
+        if(mn1 > mn2) mn2 += n2;
+        else mn1 += n1;
+    }
+        
+    return n1;
 }
 
 int main() {
