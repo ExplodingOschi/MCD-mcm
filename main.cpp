@@ -12,7 +12,7 @@ int MCD(int n1, int n2) {
         
     }while(r != 0);
      
-    return r;
+    return n1;
 }
 
 int mcm(int n1, int n2) {
